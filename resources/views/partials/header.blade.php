@@ -8,8 +8,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
-                    <a class="nav-link" href="#">Lista Fumetti</a>
+                    <a class="nav-link {{ Route::currentRouteName() === 'home' ? 'active' : '' }}" aria-current="page"
+                        href="{{ route('home') }}">Home</a>
+                    <a class="nav-link  {{ Route::currentRouteName() === 'comics.index' ? 'active' : '' }}"
+                        href="{{ route('comics.index') }}">Lista Fumetti</a>
                     <a class="nav-link" href="#">Pricing</a>
                 </div>
             </div>
