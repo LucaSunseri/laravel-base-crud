@@ -13,7 +13,8 @@
                         <h5 class="card-title">{{ $comic->title }}</h5>
                         <h6 class="card-title">{{ $comic->series }}</h6>
                         <p class="card-text">{{ $comic->description }}</p>
-                        <p class="card-text"><small class="text-muted">{{ $comic->sale_date }}</small></p>
+                        <p class="card-text"><small
+                                class="text-muted">{{ date('d-m-Y', strtotime($comic->sale_date)) }}</small></p>
                         <p class="card-text"><small class="text-muted">{{ $comic->price }}€</small></p>
                     </div>
                 </div>

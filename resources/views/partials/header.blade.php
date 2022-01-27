@@ -12,7 +12,6 @@
                         href="{{ route('home') }}">Home</a>
                     <a class="nav-link  {{ Route::currentRouteName() === 'comics.index' ? 'active' : '' }}"
                         href="{{ route('comics.index') }}">Lista Fumetti</a>
-                    <a class="nav-link" href="#">Pricing</a>
                 </div>
             </div>
         </div>
