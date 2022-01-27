@@ -12,8 +12,7 @@
                         <img src="{{ $comic->thumb }}" class="card-img-top" alt="{{ $comic->title }}">
                         <div class="card-body">
                             <h5 class="card-title ls-format-title">{{ $comic->title }}</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-                                quibusdam odit sapiente ex, ad numquam aut reiciendis sequi impedit. Blanditiis!
+                            <p class="card-text">{{ formatDescription($comic->description) }}
                             </p>
                             <a href="{{ route('comics.show', $comic) }}" class="btn btn-primary">Show More</a>
                         </div>
