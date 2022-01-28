@@ -12,6 +12,8 @@
                         href="{{ route('home') }}">Home</a>
                     <a class="nav-link  {{ Route::currentRouteName() === 'comics.index' ? 'active' : '' }}"
                         href="{{ route('comics.index') }}">Lista Fumetti</a>
+                    <a class="nav-link  {{ Route::currentRouteName() === 'comics.create' ? 'active' : '' }}"
+                        href="{{ route('comics.create') }}">Inserisci Fumetto</a>
                 </div>
             </div>
         </div>
