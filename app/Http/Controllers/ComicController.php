@@ -6,6 +6,7 @@ use App\Comic;
 
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
+use App\Http\Requests\ComicFormRequest;
 
 
 class ComicController extends Controller
@@ -38,7 +39,7 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ComicFormRequest $request)
     {
         $data = $request->all();
 
@@ -82,7 +83,7 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(ComicFormRequest $request, Comic $comic)
     {
         $data = $request->all();
         $comic->update($data);
