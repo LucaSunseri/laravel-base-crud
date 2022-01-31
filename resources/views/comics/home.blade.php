@@ -5,6 +5,12 @@
     <main class="container">
         <h1>Lista Fumetti</h1>
 
+        @if (session('deleted'))
+            <div class="alert alert-success" role="alert">
+                {{ session('deleted') }}
+            </div>
+        @endif
+
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
             @foreach ($comics as $comic)
                 <div class="col d-flex justify-content-center my-3">

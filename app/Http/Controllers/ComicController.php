@@ -7,6 +7,7 @@ use App\Comic;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 
+
 class ComicController extends Controller
 {
     /**
@@ -16,7 +17,7 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $comics = Comic::paginate(4);
+        $comics = Comic::orderBy('id', 'desc')->paginate(4);
 
         return view('comics.home', compact('comics'));
     }
@@ -100,6 +101,6 @@ class ComicController extends Controller
 
         $comic->delete();
 
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.index')->with('deleted', "Il fumetto $comic->title è stato eliminato con successo");
     }
 }

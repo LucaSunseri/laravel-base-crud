@@ -3,6 +3,7 @@
 @section('content')
 
     <main class="container">
+
         <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-4 d-flex flex-column justify-content-center">
@@ -18,7 +19,8 @@
                         <div class="d-flex justify-content-end">
                             <a href="{{ route('comics.edit', $comic) }}"><button type="button"
                                     class="btn btn-primary mx-3">Edit</button></a>
-                            <form action="{{ route('comics.destroy', $comic) }}" method="post">
+                            <form action="{{ route('comics.destroy', $comic) }}" method="post"
+                                onsubmit="return confirm('Sei sicuro di voler eliminare il fumetto {{ $comic->title }}')">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Delete</button>
@@ -30,7 +32,7 @@
             </div>
         </div>
 
-        <a href="{{ route('comics.index') }}"><button type="button" class="btn btn-primary">Back</button></a>
+        <a href="{{ route('comics.index') }}"><button type="button" class="btn btn-primary mb-5">Back</button></a>
     </main>
 
 @endsection
